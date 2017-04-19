@@ -72,3 +72,6 @@ response: json{status(int),result(enum)}
 
 **Success:** response = json{status(int), count(int), array of [status packet]}
 
+----
+
+* End
