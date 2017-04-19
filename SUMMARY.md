@@ -7,3 +7,5 @@
 ## Methods
 
 * [Defining Methods](methods.md)
+* [Main](main.md)
+
