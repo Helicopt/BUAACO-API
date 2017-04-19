@@ -1,50 +1,6 @@
-# BUAACO Testing Platform API#
+# External
 
-## File System##
-
-/-root
-
-|----application	:	Main files (CI structure)
-
-|----files		:	Files for download
-
-|----probs		:	Problems file folder (each problem one directory, for problem folders' structure, see collection part)
-
-|----static		:	JS and CSS files
-
-|----tmp		:	Temporary files, 0777 (all submission and cache & log)
-
-|----tools		:	Tools folder (Mars, ISE cmp tools, logisim)
-
-----
-
-## Database##
-
-### prob	[problem packet]###
-
-{id, title, view, lang, source, ac, submission, fileSize, cases, st, preg}
-
-### status	[status packet]###
-
-{id, uid, pid, token, msg, dateTime, status, correct}
-
-----
-
-## Work Flow##
-
-1. submission request
-2. authentication
-3. job allocating
-4. validation
-5. judge
-6. record submission
-7. response
-
-----
-
-## External##
-
-### Submission###
+## Submission
 
 **/submit**
 
@@ -94,7 +50,7 @@ Special statement of action info:	the function of grader payload
 7. {'p'=[file_id], 't'='file'}//download a specific file
 8. {'p'=[test_ids], 't'='queryT'}//download the specific exam problem descriptions by a list (split by ',')
 
-### Problems###
+## Problems
 
 **/problem/getProbById/{problem_id}/{token = ''}**
 
@@ -108,7 +64,7 @@ Fail: response=json{status(int), msg(string)}
 
 Success: response=json{status(int), count(int), array of [problem packet]}
 
-### Status###
+## Status
 
 **/status/{offset = 0}**
 
@@ -116,84 +72,3 @@ Fail: response=json{status(int), msg(string)}
 
 Success: response=json{status(int), count(int), array of [status packet]}
 
-----
-
-## Internal##
-
-### Security
-
-#### level1:
-
-For get method, add a token after the URL
-
-#### level2:
-
-For post method or JSON,
-
-validate: Exists(subTime) && Exists(token) && SHA256(subTime + key) == token && timediff(subTime, now()) <= TTL
-
-key is a static string
-
-#### level3
-
-(Not yet be done)
-
-maybe key becomes dynamic: key = hash(post_data + time)
-
-### APIs
-
-#### [lv1]	/Collection/printSTU/{token}
-
-#### [lv1]	/Collection/AddStu/{token}/{stu_id}
-
-#### [lv1]	/Collection/AddT/{token}/{test_id}/{problem_id}/{stu_id}
-
-#### [lv1]	/problem/getProbById/{problem_id}/{token = ''}
-
-#### [lv1]	/problem/getProbList/{offset = 0}/{token = ''}
-
-#### [lv1]	/file/l/{token = ''}
-
-#### [lv2]	/submit/xq
-
-#### [lv2]	/console	*//method: post json*
-
-**action:	rank**
-
-**action:	chart**
-
-**action:	t1**
-
-**action:	gt1**
-
-**action:	grading**
-
-**action:	rejudgeByPidAndStatus**
-
-**action:	rejudgeByMDAndStatus**
-
-**action:	addAllTest**
-
-**action:	rank**
-
-#### [lv2]	/console/jsonp
-
-----
-
-## Server##
-
-Recommended:
-
-Ubuntu 16.04
-
-PHP 7.0.15
-
-Apache 2.4.18
-
-MySQL 14.14 Distrib 5.7.17
-
-python2 2.7.12	python3 3.5.2
-
-
-
-----

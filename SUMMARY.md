@@ -2,10 +2,10 @@
 
 ## Overview
 
-* [My Awesome API](README.md)
+* [BUAA CO Testing Platform API](README.md)
 
 ## Methods
 
-* [Defining Methods](methods.md)
-* [Main](main.md)
+* [External](external.md)
+* [Internal](internal.md)
 
