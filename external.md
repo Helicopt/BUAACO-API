@@ -2,7 +2,7 @@
 
 ## Submission
 
-**/submit**
+### /submit
 
 | post_item | type    | note            |
 | --------- | ------- | --------------- |
@@ -12,7 +12,7 @@
 
 response: json{status(int),result(enum)}
 
-**/submit/xq**
+### /submit/xq
 
 | json_item                                | type   | note           |
 | ---------------------------------------- | ------ | -------------- |
@@ -23,7 +23,7 @@ response: json{status(int),result(enum)}
 | \['xqueue_body'\]\['grader_payload'\]    | json   | action info    |
 | ['xqueue_files']                         | json   | the file urls  |
 
-Example:
+**Example:**
 
 ```json
 {
@@ -37,9 +37,9 @@ Example:
     }
 }
 ```
-response: json{correct(bool),score(float),msg(string)}
+**response:** json{correct(bool),score(float),msg(string)}
 
-Special statement of action info:	the function of grader payload
+**Special statement of action info:**	the function of grader payload
 
 1. {'p'=[problem_id], 't'='prob'}//submit a problem solution
 2. {'p'=[test_id], 't'='test'}//submit a exam problem solution
@@ -52,23 +52,23 @@ Special statement of action info:	the function of grader payload
 
 ## Problems
 
-**/problem/getProbById/{problem_id}/{token = ''}**
+### /problem/getProbById/{problem_id}/{token = ''}
 
-Fail: response=json{status(int), msg(string)}
+**Fail:** response = json{status(int), msg(string)}
 
-Success: response=json{status(int), html(long text), [problem packet]}
+**Success:** response = json{status(int), html(long text), [problem packet]}
 
-**/problem/getProbList/{offset = 0}/{token = ''}**
+### /problem/getProbList/{offset = 0}/{token = ''}
 
-Fail: response=json{status(int), msg(string)}
+**Fail:** response = json{status(int), msg(string)}
 
-Success: response=json{status(int), count(int), array of [problem packet]}
+**Success:** response = json{status(int), count(int), array of [problem packet]}
 
 ## Status
 
-**/status/{offset = 0}**
+### /status/{offset = 0}
 
-Fail: response=json{status(int), msg(string)}
+**Fail:** response = json{status(int), msg(string)}
 
-Success: response=json{status(int), count(int), array of [status packet]}
+**Success:** response = json{status(int), count(int), array of [status packet]}
 

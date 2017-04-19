@@ -1,58 +1,12 @@
 # BUAACO Testing Platform API#
 
-## File System##
+​	*This system is aimed to provide chances of pratice for students and help them evaluate themselves.*
 
-/-root
+​	*Students can find problems on the website and submit their solutions of the problems, the system then judge these solutions automatically and give status responses to the problem solvers.*
 
-|----application	:	Main files (CI structure)
+​	*Teachers or TAs can observe the behaviors of the students and understand what the students' problems are.*
 
-|----files		:	Files for download
+​	This API is a basic statement of the system.
 
-|----probs		:	Problems file folder (each problem one directory, for problem folders' structure, see collection part)
-
-|----static		:	JS and CSS files
-
-|----tmp		:	Temporary files, 0777 (all submission and cache & log)
-
-|----tools		:	Tools folder (Mars, ISE cmp tools, logisim)
-
-----
-
-## Database##
-
-### prob	[problem packet]###
-
-{id, title, view, lang, source, ac, submission, fileSize, cases, st, preg}
-
-### status	[status packet]###
-
-{id, uid, pid, token, msg, dateTime, status, correct}
-
-----
-
-## Work Flow##
-
-1. submission request
-2. authentication
-3. job allocating
-4. validation
-5. judge
-6. record submission
-7. response
-
-----
-
-## Server##
-
-Recommended:
-
-Ubuntu 16.04
-
-PHP 7.0.15
-
-Apache 2.4.18
-
-MySQL 14.14 Distrib 5.7.17
-
-python2 2.7.12	python3 3.5.2
+​	Which is updating...
 
