@@ -90,6 +90,8 @@ Recommended:
 
 **Ubuntu 16.04**
 
+Dependency:
+
 **PHP 7.0.15**
 
 **Apache 2.4.18**
@@ -97,6 +99,63 @@ Recommended:
 **MySQL 14.14 Distrib 5.7.17**
 
 **python2 2.7.12	python3 3.5.2**
+
+**perl 5 (v5.22.1)**
+
+**ISE14.7**
+
+**Logisim 2.7.1**
+
+**Mars 4.5**
+
+Code frame:
+
+**Code Igniter 3.0.6**
+
+----
+
+# Code Structure
+
+* Models
+
+  * Constm.php		
+
+    //utils, constant and global definition
+
+  * Downloadm.php
+
+    //deal download fairs
+
+  * Probm.php
+
+    //query problem data
+
+  * Statusm.php
+
+    //query status data
+
+  * Subm.php
+
+    //judge and record
+
+  * Userm.php
+
+    //query user data
+
+* Controllers
+
+  * Collection.php
+  * Console.php
+  * Download.php
+  * File.php
+  * Problem.php
+  * Status.php
+  * Submit.php
+  * Welcome.php
+
+* Views
+
+  * omit...
 
 ----
 
